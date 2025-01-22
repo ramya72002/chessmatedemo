@@ -11035,9 +11035,33 @@
                                                             <div id="comp-lwg6u7wr" class="comp-lwg6u7wr NZHLsZ mfxFLH">
                                                                 <nav tabindex="-1" class="StylableHorizontalMenu3372578893__root StylableHorizontalMenu3372578893---menuMode-4-wrap style-lyd2zvma__root wixui-horizontal-menu" aria-label="Site">
                                                                     <ul class="StylableHorizontalMenu3372578893__menu">
-                                                                        <li class="itemDepth02233374943__itemWrapper wixui-horizontal-menu__item" data-testid="menuItemDepth0" data-item-depth="0" data-is-current="false" aria-current="false">
-                                                                            <div data-item-label="true" data-testid="linkElement" class="itemDepth02233374943__root StylableHorizontalMenu3372578893__menuItem" tabindex="0" aria-haspopup="true" aria-expanded="false"
+                                                                        <li class="itemDepth02233374943__itemWrapper wixui-horizontal-menu__item" data-testid="menuItemDepth0" data-item-depth="0" data-is-current="false" aria-current="false" >
+                                                                            <div data-item-label="true" data-testid="linkElement" class="itemDepth02233374943__root StylableHorizontalMenu3372578893__menuItem" tabindex="0" aria-haspopup="true" aria-expanded="false" 
                                                                                 role="button">
+                                                                                
+                                                                                <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuItems = document.querySelectorAll('.itemDepth02233374943__root, .itemDepth02233374943__itemWrapper');
+      
+      menuItems.forEach((menuItem) => {
+        // Add event listener for mouseover
+        menuItem.addEventListener('mouseover', () => {
+          menuItem.classList.add('itemDepth02233374943--isHovered');
+          menuItem.setAttribute('data-hovered', 'true');
+          menuItem.setAttribute('data-shown', 'true');
+          menuItem.setAttribute('aria-expanded', 'true');
+        });
+
+        // Add event listener for mouseout
+        menuItem.addEventListener('mouseout', () => {
+          menuItem.classList.remove('itemDepth02233374943--isHovered');
+          menuItem.removeAttribute('data-hovered');
+          menuItem.removeAttribute('data-shown');
+          menuItem.setAttribute('aria-expanded', 'false');
+        });
+      });
+    });
+  </script>
                                                                                 <div class="itemDepth02233374943__container"><span class="itemDepth02233374943__label wixui-horizontal-menu__item-label">Parents</span></div>
                                                                             </div>
                                                                             <div class="itemDepth02233374943__positionBox" role="group" aria-label="Parents" data-testid="positionBox">
