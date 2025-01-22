@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hover Effect</title>
+  <style>
+    /* Base styles */
+    .itemDepth02233374943__root {
+      background-color: lightgray;
+      padding: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Hover styles */
+    .itemDepth02233374943--isHovered {
+      background-color: gray;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div data-item-label="true" 
+       data-testid="linkElement" 
+       class="itemDepth02233374943__root StylableHorizontalMenu3372578893__menuItem" 
+       tabindex="0" 
+       aria-haspopup="true" 
+       aria-expanded="false">
+    Hover over me
+  </div>
+
+  <script>
+    // JavaScript to toggle class on hover
+    const menuItem = document.querySelector('.itemDepth02233374943__root');
+    
+    menuItem.addEventListener('mouseover', () => {
+      menuItem.classList.add('itemDepth02233374943--isHovered');
+    });
+
+    menuItem.addEventListener('mouseout', () => {
+      menuItem.classList.remove('itemDepth02233374943--isHovered');
+    });
+  </script>
+</body>
+</html>
