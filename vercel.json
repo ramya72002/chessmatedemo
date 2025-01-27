@@ -2,7 +2,8 @@
     "routes": [
       { "src": "/chess-worksheet-for-kids", "dest": "/chess-worksheet-for-kids.html" },
       { "src": "/", "dest": "/index.html" },
-      { "src": "/description", "dest": "/teachers.html" }
+      { "src": "/description", "dest": "/teachers.html" },
+      { "src": "/plans", "dest": "/plans-and-pricing.html" }
     ]
   }
   
