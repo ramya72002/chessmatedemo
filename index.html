@@ -11601,6 +11601,63 @@
                                                                                 </div>
                                                                                 <!--/$-->
                                                                                 <!--$-->
+                                                                                <script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Select the form
+    const form = document.getElementById("comp-kgp519o0");
+
+    // Select the send button
+    const sendButton = document.querySelector("#comp-kgp519pb1 button");
+
+    // Add event listener for form submission
+    sendButton.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Get form input values
+        const name = document.getElementById("input_comp-kgp519ob1").value.trim();
+        const email = document.getElementById("input_comp-kgp519ok").value.trim();
+        const message = document.getElementById("textarea_comp-kgp519ow1").value.trim();
+        const subject = "Request from website: "; // Fixed subject
+
+        // Validate required fields
+        if (!name || !email || !message) {
+            alert("Please fill in all required fields.");
+            return;
+        }
+
+        // Prepare the data to send
+        const formData = {
+            name: name,
+            email: email,
+            subject: subject,
+            question: message
+        };
+
+        // Send the data to the API
+        fetch("https://backend-chess-tau.vercel.app/submit_question_email", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.message) {
+                alert("Your question has been submitted successfully!");
+                form.reset(); // Clear the form
+            } else {
+                alert("Error: " + data.error);
+            }
+        })
+        .catch(error => {
+            alert("An error occurred. Please try again later.");
+            console.error("Error:", error);
+        });
+    });
+});
+</script>
+
                                                                                 <div id="comp-kdrpszt02" class="bkIuWA comp-kdrpszt02">
                                                                                     <div data-mesh-id="comp-kdrpszt02inlineContent" data-testid="inline-content" class="">
                                                                                         <div data-mesh-id="comp-kdrpszt02inlineContent-gridContainer" data-testid="mesh-container-content">
